@@ -1,0 +1,165 @@
+
+{
+    "contacts":[
+        {
+            "ID" : "1",
+            "Name" : "Riya",
+            "profileImg": "./profile1.jpg",
+            "MobNo": "+91 8425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50PM"},
+
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"11:00PM"}
+                
+            ]
+        },
+        {
+            "ID" : "2",
+            "Name" : "Priya",
+            "profileImg": "./profile2.jpg",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50PM"},
+                
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"11:00PM"}
+                
+            ]
+        },
+        {
+            "ID" : "3",
+            "profileImg": "./profile3.jpg",
+            "Name" : "Tina",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50PM"},
+                
+                {"Msg":"Good Morning",
+                "type":"sent",
+                "time":"11:00PM"}
+                
+            ]
+        },
+        {
+            "ID" : "4",
+            "Name" : "Ruta",
+            "profileImg": "./profile4.jpg",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50PM"},
+                
+                {"Msg":"I am Mina",
+                "type":"sent",
+                "time":"11:00PM"}
+                
+            ]
+        },
+        {
+            "ID" : "5",
+            "Name" : "Rita",
+            "profileImg": "./profile5.jpg",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50PM"},
+                
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"11:00PM"}
+                
+            ]
+        },
+        {
+            "ID" : "6",
+            "Name" : "Sita",
+            "profileImg": "./profile6.jpg",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50PM"},
+                
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"11:00PM"}
+                
+            ]
+        },
+        {
+            "ID" : "7",
+            "Name" : "Gita",
+            "profileImg": "./profile3.jpg",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50PM"},
+                
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"11:00PM"}
+                
+            ]
+        },
+        {
+            "ID" : "8",
+            "Name" : "Meena",
+            "profileImg": "./profile2.jpg",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50PM"},
+                
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"11:00PM"}
+                
+            ]
+        }
+    ]
+}
