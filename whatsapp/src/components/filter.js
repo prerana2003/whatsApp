@@ -47,7 +47,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 function Filter({onSearch}) {
-    let SearchText;
 
     return (
         <Grid container alignItems='center' sx={{padding: '8px 5px'}}>
@@ -59,7 +58,7 @@ function Filter({onSearch}) {
                     <StyledInputBase
                         sx={{ fontSize:'small', fontFamily:font}}
                         placeholder="Search or start new chat"
-                        onChange={(event)=>{SearchText = event.target.value; onSearch(event.target.value)}}
+                        onChange={(event)=>{onSearch(event.target.value)}}
                     />
                 </Search>
             </Grid>

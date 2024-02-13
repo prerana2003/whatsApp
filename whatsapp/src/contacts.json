@@ -4,20 +4,73 @@
         {
             "ID" : "1",
             "Name" : "Riya",
-            "profileImg": "./profile1.jpg",
+            "profileImg": "../assets/profile1.jpg",
             "MobNo": "+91 8425631587",
             "Messages":[
-                {"Msg":"Hiii",
+                {"Msg":"Hii, My name is Riya",
                 "type":"sent",
                 "time":"1:00PM"},
 
-                {"Msg":"Hello",
-                "type":"sent",
+                {"Msg":"Hello, How are you",
+                "type":"Received",
                 "time":"1:50PM"},
 
-                {"Msg":"Hiii",
+                {"Msg":"Bye",
+                "type":"sent",
+                "time":"11:00PM"},
+
+                {"Msg":"Hii, My name is Riya",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hii, My name is Riya",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello, How are you",
+                "type":"Received",
+                "time":"1:50PM"},
+
+                {"Msg":"Bye",
+                "type":"sent",
+                "time":"11:00PM"},
+                
+                {"Msg":"Hii, My name is Riya",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello, How are you",
+                "type":"Received",
+                "time":"1:50PM"},
+
+                {"Msg":"Bye",
+                "type":"sent",
+                "time":"11:00PM"},
+
+                {"Msg":"Hii, My name is Riya",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello, How are you",
+                "type":"Received",
+                "time":"1:50PM"},
+
+                {"Msg":"Bye",
+                "type":"sent",
+                "time":"11:00PM"},
+
+                {"Msg":"Hii, My name is Riya",
+                "type":"sent",
+                "time":"1:00PM"},
+
+                {"Msg":"Hello, How are you",
+                "type":"Received",
+                "time":"1:50PM"},
+
+                {"Msg":"Bye",
                 "type":"sent",
                 "time":"11:00PM"}
+                
                 
             ]
         },

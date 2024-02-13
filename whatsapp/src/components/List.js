@@ -8,28 +8,29 @@ import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined'
 import {Avatar} from '@mui/material'
 import React from 'react'
 import Archived from './archived'
+import profilePic from '../assets/profile1.jpg'
 
 
 const font = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
 
-const EmpItem = ({contact}) =>{
-    // function onClick(){
-    //     setSelectedEmp(emp)
-    // }
+const EmpItem = ({contact, setSelectedCon, selectedContact}) =>{
+    function onClick(){
+        setSelectedCon(contact)
+    }
     
     return(
         <Box>
-        <Grid container alignItems='center'>
+        <Grid container key={contact['ID']} onClick={onClick} alignItems='center' style={{backgroundColor: (selectedContact && contact['ID'] === selectedContact['ID']) ? '#F0F2F5' : ''}} sx={{':hover':{backgroundColor:'#F0F2F5'} }}>
             <ListItem component= "li" id={contact['ID']} sx={{padding:'0px 30px 0px 18px'}}>
                 <Grid item xs={2}>
                     <ListItemAvatar>
-                        <Avatar alt="Remy Sharp"><img src={contact["profileImg"]} height='50px' width='50px'/></Avatar>
+                        <Avatar alt="Remy Sharp"></Avatar>  
                     </ListItemAvatar>
                 </Grid>
                 <Grid item xs={10}>
                     <Grid container direction='column'>
                         <Grid container direction='row'>
-                            <Grid item xs={11}>
+                            <Grid item xs={11} margin={0}>
                                 <ListItemText
                                     primary={
                                         <React.Fragment>
@@ -40,7 +41,7 @@ const EmpItem = ({contact}) =>{
                                     }
                                 />
                             </Grid>
-                            <Grid item xs={1}>
+                            <Grid item xs={1} padding={0} margin={0}>
                                 <ListItemText
                                     secondary={
                                         <React.Fragment>
@@ -52,7 +53,7 @@ const EmpItem = ({contact}) =>{
                                 />
                             </Grid>
                         </Grid>
-                        <Grid item>
+                        <Grid item marginBottom={1} marginTop='-8px'>
                             <ListItemText
                                 secondary={
                                     <React.Fragment>
@@ -74,7 +75,7 @@ const EmpItem = ({contact}) =>{
     )
 }
 
-const ContactList = ({cloneContacts, searchValue}) =>{
+const ContactList = ({cloneContacts, searchValue, setSelectedCon, selectedContact}) =>{
     let contactListArr = []
 
     let contacts = cloneContacts;
@@ -82,16 +83,13 @@ const ContactList = ({cloneContacts, searchValue}) =>{
     function showEmployees(){
         if(contacts){
             for(let i=0;i<contacts.length;i++){
-                contactListArr.push(<EmpItem key= {contacts[i]["id"]}  contact = {contacts[i]}/>)
+                contactListArr.push(<EmpItem key= {contacts[i]["id"]}  contact = {contacts[i]} setSelectedCon={setSelectedCon} selectedContact={selectedContact}/>)
             }
         }
     }
 
-    // showEmployees();
-
     // ------------------Searching------------------------------------
     function search(){
-        // console.log(searchValue)
         if(searchValue){
             contacts = contacts.filter(function(contact){
                 if(contact["Name"].toLowerCase().includes(searchValue.toLowerCase())){
@@ -104,31 +102,12 @@ const ContactList = ({cloneContacts, searchValue}) =>{
             showEmployees();
         }
     }
-
-    // ----------------------Sorting---------------------------
-    // function sort(){
-    //     if(props.SortBtnID === 'asc'){
-    //         contacts.sort(function(a,b){
-    //             return a["name"].localeCompare(b["name"]);
-    //         });
-    //         EmpListArr = [];
-    //         showEmployees();
-    //     }
-    //     else if(props.SortBtnID === 'dsc'){
-    //         employees.sort(function(a,b){
-    //             return b["name"].localeCompare(a["name"]);
-    //         });
-    //         EmpListArr = [];
-    //         showEmployees();
-    //     }
-    // }
     
     search()
-    // sort()
 
     return(
         <Stack direction='column' overflow='auto'>
-            <Archived />
+            <Archived/>
             <Divider variant="inset" component="li" style={{listStyle:'none'}} />
             <List sx={{maxHeight: 'fit-content'}}>{contactListArr}</List>
         </Stack>

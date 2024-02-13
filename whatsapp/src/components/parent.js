@@ -2,27 +2,37 @@ import { Box, Grid } from "@mui/material";
 import { useState } from "react";
 import MyDrawer from "./Drawer";
 import Display from "./Display";
+import { Block } from "@mui/icons-material";
+
 
 
 function Parent() {
     let contactObj = require('../contacts.json').contacts
 
-    console.log(contactObj["profileImg"])
     const [contacts, setContacts] = useState(contactObj)
+    const [selectedContact, setSelectedContact] = useState()
 
      let cloneContacts= [...contacts]
 
-    console.log(cloneContacts)
+    function setMessage(msg){
+        cloneContacts[selectedContact["ID"]-1].Messages.push(msg)
+        setContacts(cloneContacts)
+        
+    }
+
+    function setSelectedCon(contact){
+        setSelectedContact(contact)
+    }
 
     return (
-        <Grid container position='absolute' alignItems='center' justifyContent='space-between' height='100%' sx={{backgroundColor: '#F0F2F5'}}>
-            <Grid item md={4}>
-                <MyDrawer cloneContacts={cloneContacts}/>
+        <Grid container display='flex' >
+            <Grid item sm={12} md={2.8} lg={2.8}>
+                <MyDrawer cloneContacts={cloneContacts} setSelectedCon={setSelectedCon} selectedContact={selectedContact}/>
             </Grid>
-            <Grid item md={8}>
-                <Display/>
+           
+            <Grid item sm={0} md={9.2} lg={9.2} component="main" margin='auto' alignItems='center' justifyContent='center'  sx={{flexGrow: 1,  position:'relative', height:''}}>
+                <Display selectedContact={selectedContact} setMessage={setMessage}/>
             </Grid>
-            
         </Grid>
     );
 }
