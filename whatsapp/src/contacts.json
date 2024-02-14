@@ -9,43 +9,55 @@
             "Messages":[
                 {"Msg":"Hii, My name is Riya",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00am"},
 
                 {"Msg":"Hello, How are you",
                 "type":"Received",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
 
                 {"Msg":"Bye",
                 "type":"sent",
-                "time":"11:00PM"},
+                "time":"11:00pm"},
 
                 {"Msg":"Hii, My name is Riya",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hii, My name is Riya",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello, How are you",
                 "type":"Received",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
 
                 {"Msg":"Bye",
                 "type":"sent",
-                "time":"11:00PM"},
+                "time":"11:00pm"},
                 
                 {"Msg":"Hii, My name is Riya",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello, How are you",
                 "type":"Received",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
 
                 {"Msg":"Bye",
                 "type":"sent",
-                "time":"11:00PM"},
+                "time":"11:00pm"},
+
+                {"Msg":"Hii, My name is Riya",
+                "type":"sent",
+                "time":"1:00pm"},
+
+                {"Msg":"Hello, How are you",
+                "type":"Received",
+                "time":"1:50pm"},
+
+                {"Msg":"Bye",
+                "type":"sent",
+                "time":"11:00pm"},
 
                 {"Msg":"Hii, My name is Riya",
                 "type":"sent",
@@ -53,164 +65,191 @@
 
                 {"Msg":"Hello, How are you",
                 "type":"Received",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
 
                 {"Msg":"Bye",
                 "type":"sent",
-                "time":"11:00PM"},
-
-                {"Msg":"Hii, My name is Riya",
-                "type":"sent",
-                "time":"1:00PM"},
-
-                {"Msg":"Hello, How are you",
-                "type":"Received",
-                "time":"1:50PM"},
-
-                {"Msg":"Bye",
-                "type":"sent",
-                "time":"11:00PM"}
+                "time":"11:00pm"}
                 
                 
             ]
         },
         {
             "ID" : "2",
-            "Name" : "Priya",
-            "profileImg": "./profile2.jpg",
+            "Name" : "Rohit",
+            "profileImg": "../assets/profile2.jpg",
             "MobNo": "+918425631587",
             "Messages":[
                 {"Msg":"Hiii",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
                 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"11:00PM"}
+                "time":"11:00pm"}
                 
             ]
         },
         {
             "ID" : "3",
-            "profileImg": "./profile3.jpg",
+            "profileImg": "../assets/profile3.jpg",
             "Name" : "Tina",
             "MobNo": "+918425631587",
             "Messages":[
                 {"Msg":"Hiii",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
                 
                 {"Msg":"Good Morning",
                 "type":"sent",
-                "time":"11:00PM"}
+                "time":"11:00pm"}
                 
             ]
         },
         {
             "ID" : "4",
             "Name" : "Ruta",
-            "profileImg": "./profile4.jpg",
             "MobNo": "+918425631587",
             "Messages":[
                 {"Msg":"Hiii",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
                 
                 {"Msg":"I am Mina",
                 "type":"sent",
-                "time":"11:00PM"}
+                "time":"11:00pm"}
                 
             ]
         },
         {
             "ID" : "5",
             "Name" : "Rita",
-            "profileImg": "./profile5.jpg",
+            "profileImg": "../assets/profile5.jpg",
             "MobNo": "+918425631587",
             "Messages":[
                 {"Msg":"Hiii",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
                 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"11:00PM"}
+                "time":"11:00pm"}
                 
             ]
         },
         {
             "ID" : "6",
             "Name" : "Sita",
-            "profileImg": "./profile6.jpg",
+            "profileImg": "../assets/profile6.jpg",
             "MobNo": "+918425631587",
             "Messages":[
                 {"Msg":"Hiii",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
                 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"11:00PM"}
+                "time":"11:00pm"}
                 
             ]
         },
         {
             "ID" : "7",
             "Name" : "Gita",
-            "profileImg": "./profile3.jpg",
+            "profileImg": "../assets/profile3.jpg",
             "MobNo": "+918425631587",
             "Messages":[
                 {"Msg":"Hiii",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
                 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"11:00PM"}
+                "time":"11:00pm"}
                 
             ]
         },
         {
             "ID" : "8",
-            "Name" : "Meena",
-            "profileImg": "./profile2.jpg",
+            "Name" : "Ramesh",
+            "profileImg": "../assets/profile2.jpg",
             "MobNo": "+918425631587",
             "Messages":[
                 {"Msg":"Hiii",
                 "type":"sent",
-                "time":"1:00PM"},
+                "time":"1:00pm"},
 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"1:50PM"},
+                "time":"1:50pm"},
                 
                 {"Msg":"Hello",
                 "type":"sent",
-                "time":"11:00PM"}
+                "time":"11:00pm"}
+                
+            ]
+        },
+        {
+            "ID" : "9",
+            "Name" : "Ram",
+            "profileImg": "../assets/profile4.jpg",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00pm"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50pm"},
+                
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"11:00pm"}
+                
+            ]
+        },
+        {
+            "ID" : "10",
+            "Name" : "Rahul",
+            "profileImg": "../assets/profile2.jpg",
+            "MobNo": "+918425631587",
+            "Messages":[
+                {"Msg":"Hiii",
+                "type":"sent",
+                "time":"1:00pm"},
+
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"1:50pm"},
+                
+                {"Msg":"Hello",
+                "type":"sent",
+                "time":"11:00pm"}
                 
             ]
         }

@@ -6,35 +6,37 @@ import Archived from "./archived";
 import ContactList from "./List";
 import { useState } from "react";
 
-const drawerWidth = 406;
+const drawerWidth = '406px';
 
 
 function MyDrawer({cloneContacts, setSelectedCon, selectedContact}) {
     let [searchValue, setSearchValue] = useState('')
 
     function onSearch(myValue){
-        // console.log(myValue)
         setSearchValue(myValue)
-    }
-
-    console.log(searchValue)
+    } 
 
     return (
-
-        <Drawer variant="permanent" 
-            sx={{width: drawerWidth, 
-                position:'relative',
-                flexShrink: 0,
-                '& .MuiDrawer-paper': {
-                width: drawerWidth,
-                boxSizing: 'border-box',
-            },
-          }}>
+        <Grid  variant="permanent" overflowY='auto' overflowX='none' 
+                sx={{ 
+                    display:{
+                        xs:(selectedContact)?'none':'',
+                        sm:(selectedContact)?'none':'',
+                        md:'block'
+                    },
+                    position:'relative',
+                    flexShrink: 0,
+                    '& .MuiDrawer-paper': {
+                    boxSizing: 'border-box',
+                },
+            }}>
                     <ToolBar/>
                     <Filter onSearch = {onSearch}/>
                     <Divider component="li" style={{listStyle:'none'}}/>
                     <ContactList searchValue={searchValue} cloneContacts= {cloneContacts} setSelectedCon={setSelectedCon} selectedContact={selectedContact}/>                    
-        </Drawer>
+            </Grid>
+        // </Grid>
+        
         
     );
 }

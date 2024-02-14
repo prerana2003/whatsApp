@@ -7,30 +7,32 @@ import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import {InputBase} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
-import { HubRounded } from "@mui/icons-material";
-
-const drawerWidth = 406;
 
 const font = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
 
 function MyChat({chat}){
     return(
-        <Grid container direction='column'>
+        <Grid container direction='column' >
             <Grid item maxWidth={50} padding='2px'>
-            <ListItem key='chat' sx={{float:(chat.type==="sent")?'right':'left', borderRadius:'5px', backgroundColor:'#acfcac',width:'fit-content', padding:'6px 7px 8px 9px'}}>
-                <ListItemText >
-                    <Typography component='p' sx={{fontSize:'14.2px', fontFamily:font,}}>
-                    {chat.Msg}
-                    </Typography>
-                    
-                </ListItemText>
-            </ListItem>
+                <ListItem key='chat'  sx={{float:(chat.type==="sent")?'right':'left', wordWrap: 'break-word', borderRadius:'5px', backgroundColor:'#acfcac',width:'fit-content', maxWidth:'400px', padding:'0px 6px 0px 9px', marginRight:5}}>
+                    <ListItemText>
+                        <Typography component='p' padding='0px 47px 0px 0px' sx={{fontSize:'14.2px', fontFamily:font}}>
+                            {chat.Msg}
+                        </Typography>
+                        <Typography component='p' marginTop='-8px' sx={{fontSize:'11px', textAlign:'right', fontFamily:font,}}>
+                            {chat.time}
+                            
+                        </Typography>
+                        
+                        
+                    </ListItemText>
+                </ListItem>
             </Grid>
         </Grid>
     )
 }
 
-const DisplayContact = ({selectedContact, setMessage}) =>{
+const DisplayContact = ({setSelectedCon, selectedContact, setMessage}) =>{
     let myMsg={"Msg": '',
                 "time":'',
                 "type":''};
@@ -53,51 +55,50 @@ const DisplayContact = ({selectedContact, setMessage}) =>{
         let min = new Date().getMinutes()
         let ampm;
         if(hours >= 12){
-            ampm = "PM"
+            ampm = "pm"
         }
         else{
-            ampm = "AM"
+            ampm = "am"
         }
-        hours = hours %12
-        let time = hours+":"+min+ampm
+        hours = hours % 12
+        hours = (hours === 0 ) ? 12 : hours 
+        let time = hours+":"+ min +""+ ampm
         return time
     }
 
-    console.log(currtime())
-
     displayChats()
-
-    // console.log(newMsg)
     
     return(
-        <Grid container direction='column'>
-            <Grid item md={1} lg={1}>
-                <DisplayAppbar selectedContact={selectedContact}/>
+        <Grid container direction='column' position='relative'>
+
+            <Grid item md={12} lg={12} height='72px'>
+                <DisplayAppbar setSelectedCon={setSelectedCon} selectedContact={selectedContact}/>
             </Grid>
-            <Grid item md={1} lg={1}  padding={0} paddingLeft={4} sx={{height:'fit-content', minHeight:'70vh',}}>
-                <List>{chatsArr}</List>
+
+            <Grid item md={12} lg={12} padding={0}  paddingLeft={6}  >
+                <List sx={{position:'revert', overflowY:'scroll',scrollbarWidth: 'thin', scrollbarColor:'rgba(var(--black-rgb),.2) rgba(var(--white-rgb),.1)', height:'77vh', maxHeight:'fit-content',scrollbarWidth: 'thin'}}>
+                    {chatsArr}
+                </List>
+                <Toolbar/>
             </Grid>
+
             <Grid container md={10} lg={10} 
                 sx={{
                     position: 'fixed',
                     bottom: 0,
-                    // marginLeft:'-20px',
                     height: 60,
                     padding:'10px',
                     backgroundColor:'#e9edef'
                 }}>
                     
-                    <Grid item md={0.5} lg='none'>
-
-                    </Grid>
-                    <Grid item md={1} lg={0.5}>
+                    <Grid item xs={1} md={0.5} lg={0.5}>
                         <Button sx={{minWidth:'0',color:"#54656f", ':hover':{backgroundColor:'#e9edef'}}}><EmojiEmotionsOutlinedIcon fontSize="medium"/></Button>
                     </Grid>
-                    <Grid item md= {1} lg={0.5}>
+                    <Grid item xs={1} md= {0.7} lg={0.5}>
                         <Button sx={{minWidth:'0',color:"#54656f", ':hover':{backgroundColor:'#e9edef'}}}><AddOutlinedIcon fontSize="medium" sx={{textShadow:3}}/></Button>
                         
                     </Grid>
-                    <Grid item md={8} lg={7.7}>
+                    <Grid item xs={9} md={7} lg={8.6}>
                         <Box
                             component="form"
                             sx={{ backgroundColor:'white', borderRadius:'10px', p: '3px 5px', display: 'flex', alignItems: 'center' }}
@@ -106,6 +107,7 @@ const DisplayContact = ({selectedContact, setMessage}) =>{
                                 sx={{ ml: 1, flex: 1, padding:0, fontSize:'14.2px', color:'#54656f', fontFamily:font}}
                                 placeholder=" Type a message"
                                 inputProps={{ 'aria-label': 'search google maps' }}
+                                value={newMsg.Msg}
                                 onChange={(event)=>{
                                     let currTime = currtime();
                                     setNewMsg({"Msg":event.target.value, "time":currTime, "type":"sent"})
@@ -114,14 +116,14 @@ const DisplayContact = ({selectedContact, setMessage}) =>{
                             
                         </Box>
                     </Grid>
-                    <Grid item md={0.5} lg={1}>
+                    <Grid item xs={1} md={1} lg={1}>
                         {(newMsg["Msg"])?
                         <Button onClick={()=>{
                             
                             if(newMsg["Msg"]){
                                 setMessage(newMsg)
+                                setNewMsg(myMsg)
                             }}} sx={{color:"#54656f", ':hover':{backgroundColor:'#e9edef'}}} ><SendIcon fontSize="medium" /></Button>
-                        
                         :
                         <Button sx={{color:"#54656f", ':hover':{backgroundColor:'#e9edef'}}}><MicOutlinedIcon fontSize="medium" /></Button>
                         }
