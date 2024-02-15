@@ -3,7 +3,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import img from '../assets/img1.png'
 import DisplayContact from "./displayContact";
 import {Toolbar} from "@mui/material";
-import backImg from '../assets/back.jpg'
+import backImg from '../assets/back.jpeg'
 
 const font = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
 
@@ -12,7 +12,7 @@ function Display({selectedContact, setMessage, setSelectedCon}) {
   
 
   return (
-    <Paper height='100%' marginBottom={0} overflow='hidden' sx={{  display: { xs:(selectedContact)? 'block' :'none', sm: (selectedContact)? 'block' :'none', md:'block'}, backgroundColor: (!selectedContact) ? '#F0F2F5' : '', backgroundImage:(selectedContact)? `url(${backImg})` : '', padding:'0px'}} textAlign='center' justifyContent='center'>
+    <Paper height='100%' marginBottom={0} overflow='hidden' sx={{display: { xs:(selectedContact)? 'block' :'none', sm:'block'}, backgroundColor: (!selectedContact) ? '#F0F2F5' : '', backgroundImage:(selectedContact)? `url(${backImg})` : '', padding:'0px'}} textAlign='center' justifyContent='center'>
       {(!selectedContact) ? 
         <Grid marginBottom={0} sx={{ height:'100vh', overflowY:'auto', scrollbarWidth: 'thin', backgroundColor: '#F0F2F5', boxShadow:'none'}} textAlign='center' justifyContent='center'>
           <Toolbar/>

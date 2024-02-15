@@ -107,12 +107,11 @@ const ContactList = ({cloneContacts, searchValue, setSelectedCon, selectedContac
         <Stack direction='column' overflow='auto' overflowX="none" height='80vh'
             sx={
                 {
-                    '&::-webkit-scrollbar': {
+                  '&::-webkit-scrollbar': {
                     width: '0.4em'
                   },
                   '&::-webkit-scrollbar-thumb': {
                     backgroundColor: 'rgba(0,0,0,.1)',
-
                   }
                 }
             }

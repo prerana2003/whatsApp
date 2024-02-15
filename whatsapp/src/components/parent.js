@@ -27,11 +27,11 @@ function Parent() {
 
     return (
         <Grid container >
-            <Grid item xs={12} sm={12} md={4.5} lg={3.5}>
+            <Grid item xs={12} sm={6} md={4.8} lg={3.6}>
                 <MyDrawer cloneContacts={cloneContacts} setSelectedCon={setSelectedCon} selectedContact={selectedContact}/>
             </Grid>
            
-            <Grid item sm={0} md={7.5} lg={8.5} component="main"   sx={{flexGrow: 1, padding:'0px', margin:'0px', position:'relative', height:'100%'}}>
+            <Grid item sm={6} md={7.2} lg={8.4} component="main"   sx={{flexGrow: 1, padding:'0px', margin:'0px', position:'relative', height:'100%'}}>
                 <Display setSelectedCon={setSelectedCon} selectedContact={selectedContact} setMessage={setMessage}/>
             </Grid>
         </Grid>

@@ -14,7 +14,7 @@ function MyChat({chat}){
     return(
         <Grid container direction='column' >
             <Grid item maxWidth={50} padding='2px'>
-                <ListItem key='chat'  sx={{float:(chat.type==="sent")?'right':'left', wordWrap: 'break-word', borderRadius:'5px', backgroundColor:'#acfcac',width:'fit-content', maxWidth:'400px', padding:'0px 6px 0px 9px', marginRight:5}}>
+                <ListItem key='chat' sx={{'box-shadow': '0 1px 1px 0px #9c8d8d', float:(chat.type==="sent")?'right':'left', wordWrap: 'break-word', borderRadius:'5px', backgroundColor:(chat.type==="sent")?'#acfcac':'white',width:'fit-content', maxWidth:'400px', padding:'0px 6px 0px 9px', marginRight:5}}>
                     <ListItemText>
                         <Typography component='p' padding='0px 47px 0px 0px' sx={{fontSize:'14.2px', fontFamily:font}}>
                             {chat.Msg}
@@ -76,7 +76,7 @@ const DisplayContact = ({setSelectedCon, selectedContact, setMessage}) =>{
             </Grid>
 
             <Grid item md={12} lg={12} padding={0}  paddingLeft={6}  >
-                <List sx={{position:'revert', overflowY:'scroll',scrollbarWidth: 'thin', scrollbarColor:'rgba(var(--black-rgb),.2) rgba(var(--white-rgb),.1)', height:'77vh', maxHeight:'fit-content',scrollbarWidth: 'thin'}}>
+                <List sx={{position:'revert', overflowY:'scroll',scrollbarWidth: 'thin', scrollbarGutter:"-moz-initial", height:'77vh', maxHeight:'fit-content',scrollbarWidth: 'thin'}}>
                     {chatsArr}
                 </List>
                 <Toolbar/>
@@ -88,6 +88,7 @@ const DisplayContact = ({setSelectedCon, selectedContact, setMessage}) =>{
                     bottom: 0,
                     height: 60,
                     padding:'10px',
+                    paddingRight:'25px',
                     backgroundColor:'#e9edef'
                 }}>
                     
@@ -103,7 +104,7 @@ const DisplayContact = ({setSelectedCon, selectedContact, setMessage}) =>{
                             component="form"
                             sx={{ backgroundColor:'white', borderRadius:'10px', p: '3px 5px', display: 'flex', alignItems: 'center' }}
                             >
-                            <InputBase
+                            <InputBase multiline overflow='auto' maxHeight='200px'
                                 sx={{ ml: 1, flex: 1, padding:0, fontSize:'14.2px', color:'#54656f', fontFamily:font}}
                                 placeholder=" Type a message"
                                 inputProps={{ 'aria-label': 'search google maps' }}
