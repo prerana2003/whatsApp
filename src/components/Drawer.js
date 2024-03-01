@@ -4,15 +4,16 @@ import ToolBar from "./ToolBar";
 import Filter from "./filter";
 import Archived from "./archived";
 import ContactList from "./List";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PersistentDrawer from "./persistentDrawer";
 import {useTheme} from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link, Outlet } from "react-router-dom";
 
-// const drawerWidth = '406px';
+function MyDrawer({cloneContacts, setSelectedCon }) {
+    const selectedContact = useSelector((state)=>state.selectedContact.selectedContact)
 
-
-function MyDrawer({cloneContacts, setSelectedCon, selectedContact}) {
     let [searchValue, setSearchValue] = useState('')
     const [btnClick, setBtnClick] = useState();
 
@@ -35,29 +36,34 @@ function MyDrawer({cloneContacts, setSelectedCon, selectedContact}) {
         setBtnClick(btn)
     }
 
-    console.log(btnClick)
+    useEffect(()=>{
+        console.log('------------------------------------------')
+    },[])
 
     return (
-        <Grid  variant="permanent" overflowY='auto' overflowX='none' 
-                sx={{ 
-                    display:{
-                        xs:(selectedContact)?'none':'',
-                        sm:'block'
+        // <Link to='/' style={{textDecoration:'none', color:'black'}}>
+        // {/* // {console.log(selectedContact)} */}
+            <Grid  variant="permanent" overflowY='auto' overflowX='none' 
+                    sx={{ 
+                        display:{
+                            xs:(!selectedContact)?'block':'none',
+                            sm:'block'
+                        },
+                        position:'relative',
+                        flexShrink: 0,
+                        '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
                     },
-                    position:'relative',
-                    flexShrink: 0,
-                    '& .MuiDrawer-paper': {
-                    boxSizing: 'border-box',
-                },
-            }}>
+                }}>
+                    
                     <ToolBar onSetBtnClick={onSetBtnClick} handleDrawerOpen={handleDrawerOpen} handleDrawerClose={handleDrawerClose}/>
                     <PersistentDrawer btnClick={btnClick} theme={theme} open={open} handleDrawerOpen={handleDrawerOpen} handleDrawerClose={handleDrawerClose}/>
                     <Filter onSearch = {onSearch}/>
                     <Divider component="li" style={{listStyle:'none'}}/>
                     <ContactList searchValue={searchValue} cloneContacts= {cloneContacts} setSelectedCon={setSelectedCon} selectedContact={selectedContact}/>                    
             </Grid>
-        // </Grid>
-        
+        //  {/* // </Grid> */}
+        // </Link>
         
     );
 }

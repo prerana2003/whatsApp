@@ -1,5 +1,5 @@
 import { Box, Toolbar, Typography,List, Grid, ListItemText, Button, ListItem} from "@mui/material"
-import React from "react";
+import React, { useMemo } from "react";
 import { useState, useEffect } from "react";
 import DisplayAppbar from "./DisplayAppBar";
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
@@ -8,10 +8,10 @@ import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import {InputBase} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import { useDispatch, useSelector } from "react-redux";
-import backImg from '../assets/back.jpeg'
 import addNewMsg from "../redux/newMsg";
 import moment from "moment";
 import { useParams } from "react-router-dom";
+import { setSelectedContact } from "../redux/selectedContactSlice";
 
 const font = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
 
@@ -36,10 +36,15 @@ function MyChat({chat}){
 
 const DisplayContact = () =>{
     const contacts = useSelector((state)=>state.contacts.contacts)
+    const selectedContact = useSelector((state)=>state.selectedContact.selectedContact)
     const dispatch = useDispatch();
 
     const {id} = useParams();
 
+    useEffect(()=>{
+        const Id = Number(id)
+        dispatch(setSelectedContact(Id))
+    }, [id])
 
     let myMsg={"Msg": '',
                 "time":'',
@@ -59,13 +64,19 @@ const DisplayContact = () =>{
     displayChats()
     
     return(
-        <Grid container direction='column' position='relative'>
+        <Grid container direction='column' position='relative'
+            // sx={{display:{
+            //     xs:(!selectedContact)?'block':'none',
+            //     sm:'block'
+            //   }, 
+            // }}
+        >
 
             <Grid item md={12} lg={12} height='72px'>
                 <DisplayAppbar id={id}/>
             </Grid>
 
-            <Grid  item md={12} lg={12} paddingLeft={6}  sx={{marginTop:-1, backgroundImage:(id)? `url(${backImg})` : ''}}>
+            <Grid  item md={12} lg={12} padding={0}  paddingLeft={6}  >
                 <List  sx={{position:'revert', overflowY:'scroll',scrollbarWidth: 'thin', scrollbarGutter:"-moz-initial", height:'77vh', maxHeight:'fit-content',scrollbarWidth: 'thin'}}>
                     {chatsArr}
                 </List>
@@ -90,7 +101,10 @@ const DisplayContact = () =>{
                         
                     </Grid>
                     <Grid item xs={9} sm={4} md={5.6} lg={7}>
-                        <Box component="form" sx={{ backgroundColor:'white', borderRadius:'10px', p: '3px 5px', alignItems: 'center' }}>
+                        <Box
+                            component="form"
+                            sx={{ backgroundColor:'white', borderRadius:'10px', p: '3px 5px', display: 'flex', alignItems: 'center' }}
+                            >
                             <InputBase overflow='auto' maxHeight='200px'
                                 sx={{ ml: 1, flex: 1, padding:0, fontSize:'14.2px', color:'#54656f', fontFamily:font}}
                                 placeholder=" Type a message"
@@ -102,6 +116,7 @@ const DisplayContact = () =>{
                                     setNewMsg({"Msg":event.target.value, "time":time, "type":"sent"}): setNewMsg(myMsg)
                                 }}
                             />
+                            
                         </Box>
                     </Grid>
                     <Grid item xs={1} sm={1} md={1} lg={1}>

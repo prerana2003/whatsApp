@@ -1,4 +1,4 @@
-import { Divider, Grid, List, Stack } from '@mui/material'
+import { Divider, Grid, List, Box, Stack } from '@mui/material'
 import {ListItem} from '@mui/material'
 import {ListItemText} from '@mui/material'
 import {Typography} from '@mui/material'
@@ -6,17 +6,25 @@ import {ListItemAvatar} from '@mui/material'
 import {Avatar} from '@mui/material'
 import React from 'react'
 import Archived from './archived'
-import { useSelector } from 'react-redux'
-import { NavLink, useLocation} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { setSelectedContact } from '../redux/selectedContactSlice'
 
 const font = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
 
-const EmpItem = ({contact}) =>{
-    const selectedContactID = useLocation().pathname.slice(9,useLocation().pathname.length)
-    
+const EmpItem = ({contact, index}) =>{
+    const selectedContact = useSelector((state)=>state.selectedContact.selectedContact)
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
+    const location = useLocation()
+    // console.log('dskfhksdjfh',location.pathname[location.pathname.length-1])
+    const id = location.pathname[location.pathname.length-1];
+    // onClick={()=>dispatch(setSelectedContact(id))}
+    // onClick={()=>{console.log("dslfjsdlk")}}
     return(
-        <NavLink to={`/contact/${contact.ID}`} style={{textDecoration:'none'}}>
-            <Grid container key={contact['ID']-1}  alignItems='center' style={{backgroundColor: (selectedContactID === contact.ID) ? '#F0F2F5' : 'white'}} sx={{':hover':{backgroundColor:'#F0F2F5'} }}>
+        <>
+        <Link to={`/contact/${contact.ID}`} style={{textDecoration:'none'}}>
+            <Grid container key={contact['ID']-1}  alignItems='center' style={{backgroundColor: (selectedContact && index === selectedContact-1) ? '#F0F2F5' : 'white'}} sx={{':hover':{backgroundColor:'#F0F2F5'} }}>
                 <ListItem component= "li" id={contact['ID']} sx={{padding:'0px 30px 0px 18px'}}>
                     <Grid item xs={2}>
                         <ListItemAvatar>
@@ -65,11 +73,12 @@ const EmpItem = ({contact}) =>{
                 </ListItem>
             </Grid>
             <Divider variant="inset" component="li" style={{listStyle:'none'}} />
-        </NavLink>
+            </Link>
+            </>
     )
 }
 
-const ContactList = ({searchValue}) =>{
+const ContactList = ({searchValue,}) =>{
     let contacts = useSelector((state)=>state.contacts.contacts)
     
     let contactListArr = []
